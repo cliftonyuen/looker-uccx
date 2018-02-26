@@ -49,6 +49,10 @@ view: csq_agent_summary {
         sql: LEFT(${csq_name}, 2) = 'MS';;
         label: "Member Services"
       }
+      when: {
+        sql: LEFT(${csq_name}, 2) = 'BL';;
+        label: "Billing"
+      }
     }
     drill_fields: [my_drill_set*]
   }
