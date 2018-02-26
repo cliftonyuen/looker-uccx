@@ -128,6 +128,7 @@ view: csq_agent_summary {
     type: sum
     description: "Number of Calls ACD Answered"
     sql: ${calls_handled} ;;
+    drill_fields: [my_drill_set*]
   }
 
   measure: ACD_Calls_Abandoned {
