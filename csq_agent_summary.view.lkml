@@ -131,8 +131,9 @@ view: csq_agent_summary {
     drill_fields: [my_drill_set*]
   }
 
-  measure: ACD_Calls_Abandoned {
+  measure: Agent_Calls_Abandoned {
     type: sum
+    description: "Number of Calls ACD Answered"
     sql: ${rna} ;;
   }
 
