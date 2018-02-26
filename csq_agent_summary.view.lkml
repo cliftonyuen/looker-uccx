@@ -122,6 +122,7 @@ view: csq_agent_summary {
 
   measure: ACD_Calls_Handled {
     type: sum
+    description: "Number of Calls ACD Answered"
     sql: ${calls_handled} ;;
   }
 
