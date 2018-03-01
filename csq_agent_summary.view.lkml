@@ -71,6 +71,11 @@ view: csq_agent_summary {
     sql: ${TABLE}.hour ;;
   }
 
+  dimension: hour_format {
+    type: date_time
+    sql: ${TABLE}.hour ;;
+  }
+
   dimension: idfield {
     type: number
     sql: ${TABLE}.idfield ;;
@@ -133,6 +138,26 @@ view: csq_agent_summary {
   measure: Total_ACD_Calls {
     type: number
     sql:  ${ACD_Calls_Handled} + ${ACD_Calls_Abandoned} ;;
+  }
+
+  measure: ACD_Total_Talk_Time {
+    type: sum
+    sql: ${total_work_time} ;;
+  }
+
+  measure: ACD_Total_Ring_Time {
+    type: sum
+    sql: ${total_ring_time} ;;
+  }
+
+  measure: ACD_Total_Call_On_Hold {
+    type: sum
+    sql: ${calls_on_hold} ;;
+  }
+
+  measure: ACD_Total_Hold_Time {
+    type: sum
+    sql: ${total_hold_time} ;;
   }
 
   set: my_drill_set {
