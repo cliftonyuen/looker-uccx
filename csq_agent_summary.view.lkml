@@ -49,6 +49,10 @@ view: csq_agent_summary {
         sql: LEFT(${csq_name}, 2) = 'MS';;
         label: "Member Services"
       }
+      when: {
+        sql: LEFT(${csq_name}, 2) = 'BL';;
+        label: "Billing General"
+      }
     }
     drill_fields: [my_drill_set*]
   }
@@ -100,6 +104,11 @@ view: csq_agent_summary {
     sql: ${TABLE}.rna ;;
   }
 
+  dimension: Call_date {
+    type: date
+    sql: ${TABLE}.archive_date ;;
+  }
+
   dimension: total_hold_time {
     type: number
     sql: ${TABLE}.total_hold_time ;;
@@ -129,6 +138,7 @@ view: csq_agent_summary {
     type: sum
     sql: ${calls_handled} ;;
   }
+
 
   measure: ACD_Calls_Abandoned {
     type: sum
