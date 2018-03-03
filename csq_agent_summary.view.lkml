@@ -145,6 +145,7 @@ view: csq_agent_summary {
     sql: ${rna} ;;
   }
 
+
   measure: Total_ACD_Calls {
     type: number
     sql:  ${ACD_Calls_Handled} + ${ACD_Calls_Abandoned} ;;
