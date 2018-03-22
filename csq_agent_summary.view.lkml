@@ -139,12 +139,10 @@ view: csq_agent_summary {
     sql: ${calls_handled} ;;
   }
 
-
   measure: ACD_Calls_Abandoned {
     type: sum
     sql: ${rna} ;;
   }
-
 
   measure: Total_ACD_Calls {
     type: number
@@ -153,7 +151,7 @@ view: csq_agent_summary {
 
   measure: ACD_Total_Talk_Time {
     type: sum
-    sql: ${total_work_time} ;;
+    sql: ${total_talk_time} ;;
   }
 
   measure: ACD_Total_Ring_Time {
@@ -170,6 +168,19 @@ view: csq_agent_summary {
     type: sum
     sql: ${total_hold_time} ;;
   }
+
+  measure: Working_days_count {
+    type: count_distinct
+    sql:  ${TABLE}.archive_date ;;
+  }
+
+  measure: agent_name_count {
+    type: count_distinct
+    sql: ${TABLE}.agent_name ;;
+  }
+
+
+
 
   set: my_drill_set {
     fields: [
