@@ -179,7 +179,17 @@ view: csq_agent_summary {
     sql: ${TABLE}.agent_name ;;
   }
 
+  measure: avg_time_of_answer {
+    type: number
+    sql: ${ACD_Total_Talk_Time} / ${ACD_Calls_Handled} ;;
+    value_format: "0"
+  }
 
+  measure: avg_time_of_answer2 {
+    type: number
+    sql: ${ACD_Total_Talk_Time} / ${ACD_Calls_Handled} ;;
+    value_format: "[h]:mm:ss"
+  }
 
 
   set: my_drill_set {
