@@ -185,10 +185,23 @@ view: csq_agent_summary {
     value_format: "0"
   }
 
-  measure: avg_time_of_answer2 {
+
+  measure: avg_time_of_asnwer_in_minutes {
     type: number
-    sql: ${ACD_Total_Talk_Time} / ${ACD_Calls_Handled} ;;
-    value_format: "[h]:mm:ss"
+    sql: ${avg_time_of_answer}/60 ;;
+    value_format: "0"
+  }
+
+  measure: avg_time_of_asnwer_in_seconds {
+    type: number
+    sql:${avg_time_of_answer} - ((${avg_time_of_answer}/60)*60) ;;
+    value_format: "0"
+  }
+
+  measure: avg_time_of_asnwer_format {
+    type: number
+    sql: CONCAT(${avg_time_of_asnwer_in_minutes},'',${avg_time_of_asnwer_in_seconds});;
+    value_format: "0"
   }
 
 
