@@ -85,5 +85,11 @@ view: csq_interval {
     sql: ${calls_dequeued} ;;
   }
 
+  dimension: compound_primary_key {
+    primary_key: yes
+    hidden: yes
+    sql: CONCAT{${Call_date},' '${hour},' ',${csq_name} ;;
+  }
+
 
 }
