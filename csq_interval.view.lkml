@@ -88,7 +88,7 @@ view: csq_interval {
   dimension: compound_primary_key {
     primary_key: yes
     hidden: yes
-    sql: CONCAT${calls_abandoned},'  ',${calls_dequeued} ;;
+    sql: CONCAT(${calls_abandoned},'  ',${calls_dequeued}) ;;
   }
 
 }
