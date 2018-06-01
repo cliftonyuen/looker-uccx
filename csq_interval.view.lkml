@@ -73,6 +73,10 @@ view: csq_interval {
     sql: ${TABLE}.csq_name ;;
   }
 
+  measure: Total_Calls_Presented {
+    type: sum
+    sql: ${calls_presented} ;;
+  }
 
   measure: Total_Calls_Abandoned {
     type: sum
