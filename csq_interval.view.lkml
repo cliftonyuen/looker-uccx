@@ -49,7 +49,6 @@ view: csq_interval {
   }
 
 
-
   dimension: team {
     case: {
       when: {
@@ -74,9 +73,17 @@ view: csq_interval {
     sql: ${TABLE}.csq_name ;;
   }
 
+
   measure: Total_Calls_Abandoned {
     type: sum
     sql: ${calls_abandoned} ;;
   }
+
+
+  measure: Total_Calls_Dequeued {
+    type: sum
+    sql: ${calls_dequeued} ;;
+  }
+
 
 }
