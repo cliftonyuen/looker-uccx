@@ -14,6 +14,11 @@ view: csq_agent_summary {
     drill_fields: [ csq_name, agent_name]
   }
 
+  dimension: archive_date {
+    type: date
+    sql: ${TABLE}.archive_date ;;
+  }
+
   dimension: avg_hold_time {
     type: number
     sql: ${TABLE}.avg_hold_time ;;

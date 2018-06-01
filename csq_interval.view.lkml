@@ -1,0 +1,79 @@
+view: csq_interval {
+
+
+  dimension_group: Date {
+    type: time
+    timeframes: [year, quarter, month, date]
+    sql: ${TABLE}.archive_date ;;
+    datatype: yyyymmdd
+  }
+
+  dimension: Call_date {
+    type: date
+    sql: ${TABLE}.archive_date ;;
+  }
+
+
+  dimension: hour {
+    type: string
+    sql: ${TABLE}.hour ;;
+  }
+
+  dimension: hour_format {
+    type: date_time
+    sql: ${TABLE}.hour ;;
+  }
+
+  dimension: idfield {
+    type: number
+    sql: ${TABLE}.idfield ;;
+  }
+
+  dimension: calls_handled {
+    type: number
+    sql: ${TABLE}.calls_handled ;;
+  }
+
+  dimension: calls_presneted {
+    type: number
+    sql: ${TABLE}.calls_presneted ;;
+  }
+
+  dimension: calls_abandoned {
+    type: number
+    sql: ${TABLE}.calls_abandoned ;;
+  }
+
+  dimension: calls_dequeued {
+    type: number
+    sql: ${TABLE}.calls_dequeued ;;
+  }
+
+
+
+  dimension: team {
+    case: {
+      when: {
+        sql: LEFT(${csq_name}, 2) = 'CC' ;;
+        label: "Call Center"
+      }
+      when: {
+        sql: LEFT(${csq_name}, 2) = 'MS';;
+        label: "Member Services"
+      }
+      when: {
+        sql: LEFT(${csq_name}, 2) = 'BL';;
+        label: "Billing General"
+      }
+    }
+  }
+
+  dimension: csq_name {
+    description: "Contact Service Queue"
+    label: "CSQ"
+    type: string
+    sql: ${TABLE}.csq_name ;;
+  }
+
+
+}
