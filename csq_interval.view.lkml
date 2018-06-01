@@ -13,7 +13,6 @@ view: csq_interval {
     sql: ${TABLE}.archive_date ;;
   }
 
-
   dimension: hour {
     type: string
     sql: ${TABLE}.hour ;;
@@ -75,5 +74,9 @@ view: csq_interval {
     sql: ${TABLE}.csq_name ;;
   }
 
+  measure: Total_Calls_Abandoned {
+    type: sum
+    sql: ${calls_abandoned} ;;
+  }
 
 }
