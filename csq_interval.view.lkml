@@ -88,7 +88,7 @@ view: csq_interval {
   dimension: compound_primary_key {
     primary_key: yes
     hidden: yes
-    sql: CONCAT{${csq_interval.Call_date},' '${csq_interval.hour},' ',${csq_interval.csq_name} ;;
+    sql: CONCAT{${csq_interval.Call_date},'  '${csq_interval.hour},'  ',${csq_interval.csq_name} ;;
   }
 
 
