@@ -14,8 +14,8 @@ datagroup: contact_center_default_datagroup {
 persist_with: contact_center_default_datagroup
 
 
-explore: csq_agent_summary {
-  join: csq_interval {
+explore:  csq_interval{
+  join: csq_agent_summary{
     type: left_outer
     sql_on:
       ${csq_agent_summary.Call_date} = ${csq_interval.Call_date}
