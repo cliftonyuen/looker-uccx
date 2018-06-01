@@ -85,10 +85,15 @@ view: csq_interval {
     sql: ${calls_dequeued} ;;
   }
 
+  measure: Total_Calls_Handled {
+    type: sum
+    sql: ${calls_handled} ;;
+  }
+
   dimension: compound_primary_key {
     primary_key: yes
     hidden: yes
-    sql: CONCAT(${calls_abandoned},'  ',${calls_dequeued}) ;;
+    sql: CONCAT(${calls_abandoned},'  ',${calls_dequeued},'  ',${calls_handled}) ;;
   }
 
 }
