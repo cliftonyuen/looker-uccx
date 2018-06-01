@@ -16,8 +16,7 @@ persist_with: contact_center_default_datagroup
 
 explore: csq_agent_summary {
   join: csq_interval {
-    sql:
-      INNER JOIN csq_interval
+    sql_on:
       ON ${csq_agent_summary.Call_date} = ${csq_interval.Call_date}
       AND ${csq_agent_summary.Date_month} = ${csq_interval.Date_month}
       AND ${csq_agent_summary.Date_year} = ${csq_interval.Date_year}
