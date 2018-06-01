@@ -35,7 +35,7 @@ view: csq_interval {
 
   dimension: calls_presneted {
     type: number
-    sql: ${TABLE}.calls_presneted ;;
+    sql: ${TABLE}.calls_presented ;;
   }
 
   dimension: calls_abandoned {
