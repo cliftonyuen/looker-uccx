@@ -14,16 +14,7 @@ datagroup: contact_center_default_datagroup {
 persist_with: contact_center_default_datagroup
 
 
-explore:  csq_interval{
-  join: csq_agent_summary{
-    type: left_outer
-    sql_on:
-      ${csq_agent_summary.Call_date} = ${csq_interval.Call_date}
-      AND ${csq_agent_summary.hour} = ${csq_interval.hour}
-      AND ${csq_agent_summary.csq_name} = ${csq_interval.csq_name};;
-      relationship: many_to_one
-  }
-}
+explore:  csq_agent_summary{}
 
 # - explore: agent_all_fields
 
