@@ -213,4 +213,10 @@ view: csq_agent_summary {
 
   }
 
+  dimension: compound_primary_key {
+    primary_key: yes
+    hidden: yes
+    sql: CONCAT(${archive_date},'  ',${hour},'  ',${csq_name}),' ',${agent_name} ;;
+  }
+
 }
