@@ -1,5 +1,5 @@
 view: csq_interval {
-  sql_table_name: dbo.csqinterval ;;
+  sql_table_name: dbo.csq_interval ;;
 
   dimension_group: Date {
     type: time
