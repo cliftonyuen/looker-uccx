@@ -19,9 +19,10 @@ explore: csq_interval  {
   sql_on: ${csq_interval.Call_date} = ${csq_agent_summary.Call_date}
   and ${csq_interval.hour} = ${csq_agent_summary.hour}
   and ${csq_interval.csq_name} = ${csq_agent_summary.csq_name};;
-  relationship:  many_to_many
+  relationship:  one_to_many
   }
 }
+
 
 # - explore: agent_all_fields
 
