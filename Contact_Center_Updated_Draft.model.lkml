@@ -16,7 +16,7 @@ persist_with: contact_center_default_datagroup
 
 explore: csq_interval  {
   join: csq_agent_summary {
-  sql_on: ${csq_interval.Call_date} = ${csq_agent_summary.Call_date}
+  sql_on: ${csq_interval.Date_date} = ${csq_agent_summary.Date_date}
   and ${csq_interval.hour} = ${csq_agent_summary.hour}
   and ${csq_interval.csq_name} = ${csq_agent_summary.csq_name};;
   relationship:  one_to_many
