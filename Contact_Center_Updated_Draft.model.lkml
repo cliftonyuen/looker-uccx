@@ -21,6 +21,10 @@ explore: csq_interval  {
   and ${csq_interval.csq_name} = ${csq_agent_summary.csq_name};;
   relationship:  one_to_many
   }
+  join: my_pdt {
+    sql_on: ${csq_agent_summary.Date_month} = month ;;
+    relationship:  one_to_one
+  }
 }
 
 
