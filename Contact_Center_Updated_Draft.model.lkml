@@ -23,7 +23,7 @@ explore: csq_interval  {
   }
   join: agent_count {
     sql_on: ${csq_agent_summary.Date_month} = month ;;
-    relationship:  many_to_one
+    relationship:  one_to_one
   }
 }
 
