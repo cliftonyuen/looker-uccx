@@ -8,6 +8,13 @@ view: my_pdt {
       group by archive_date ;;
   }
 
+  dimension_group: Date {
+    type: time
+    timeframes: [year, quarter, month, date]
+    sql: ${TABLE}.archive_date ;;
+    datatype: yyyymmdd
+  }
+
   measure: daily_average {
     type: average
     sql: ${TABLE}.total_agent_count ;;
