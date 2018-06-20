@@ -82,12 +82,14 @@ view: csq_interval {
   measure: Total_Calls_Abandoned {
     type: sum
     sql: ${calls_abandoned} ;;
+    drill_fields: [drill_set2*]
   }
 
 
   measure: Total_Calls_Dequeued {
     type: sum
     sql: ${calls_dequeued} ;;
+    drill_fields: [drill_set2*]
   }
 
   measure: Total_Calls_Handled {
