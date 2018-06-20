@@ -106,9 +106,9 @@ view: csq_interval {
 
   set: drill_set1 {
     fields: [
-      Date_date,
-      hour_format,
-      csq_name,
+      csq_agent_summary.Date_date,
+      csq_agent_summary.hour_format,
+      csq_agent_summary.csq_name,
       csq_agent_summary.agent_name
       ]
   }
