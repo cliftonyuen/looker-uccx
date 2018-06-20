@@ -106,7 +106,7 @@ view: csq_interval {
   set: drill_set2 {
     fields: [
       Date_date,
-      hour,
+      hour_format,
       csq_name]
    }
 }
