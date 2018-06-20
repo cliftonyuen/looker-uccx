@@ -189,6 +189,7 @@ view: csq_agent_summary {
     type: number
     sql: ${ACD_Total_Talk_Time} / ${ACD_Calls_Handled} ;;
     value_format: "0"
+    drill_fields: [drill_set_avg_time_of_answer*]
   }
 
   measure: avg_time_of_asnwer_in_minutes {
@@ -214,10 +215,21 @@ view: csq_agent_summary {
 
   }
 
+  set: drill_set_avg_time_of_answer {
+    fields: [
+      csq_agent_summary.Date_date,
+      csq_agent_summary.hour_format,
+      csq_agent_summary.csq_name,
+      csq_agent_summary.agent_name,
+      csq_agent_summary.total_talk_time,
+      csq_agent_summary.calls_handled
+    ]
+  }
   dimension: compound_primary_key {
     primary_key: yes
     hidden: yes
     sql: CONCAT(${archive_date},'  ',${hour},'  ',${csq_name}),' ',${agent_name} ;;
   }
+
 
 }
