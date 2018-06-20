@@ -19,7 +19,7 @@ view: csq_interval {
   }
 
   dimension: hour_format {
-    type: date_hour_of_day
+    type: date_time_of_day
     sql: ${TABLE}.hour ;;
   }
 
