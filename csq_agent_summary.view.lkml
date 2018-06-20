@@ -81,9 +81,10 @@ view: csq_agent_summary {
   }
 
   dimension: hour_format {
-    type: date_time
+    type: date_time_of_day
     sql: ${TABLE}.hour ;;
   }
+
 
   dimension: idfield {
     type: number
