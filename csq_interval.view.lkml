@@ -104,6 +104,13 @@ view: csq_interval {
     sql: CONCAT(${Call_date},'  ',${hour},'  ',${csq_name}) ;;
   }
 
+  set: drill_set1 {
+    fields: [
+      csq_agent_summary.agent_name,
+      hour_format,
+      csq_name]
+  }
+
   set: drill_set2 {
     fields: [
       Date_date,
