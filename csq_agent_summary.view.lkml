@@ -11,7 +11,7 @@ view: csq_agent_summary {
     timeframes: [year, quarter, month, date]
     sql: ${TABLE}.archive_date ;;
     datatype: yyyymmdd
-    drill_fields: [archive_date]
+   # drill_fields: [ csq_name, agent_name]
   }
 
   dimension: archive_date {
