@@ -119,4 +119,15 @@ view: csq_interval {
       hour_format,
       csq_name]
    }
+
+  set: drill_set_avg_time_of_answer {
+    fields: [
+      csq_agent_summary.Date_date,
+      csq_agent_summary.hour_format,
+      csq_agent_summary.csq_name,
+      csq_agent_summary.agent_name,
+      csq_agent_summary.total_talk_time,
+      csq_agent_summary.calls_handled
+    ]
+  }
 }
