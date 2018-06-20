@@ -36,6 +36,7 @@ view: csq_interval {
   dimension: calls_presented {
     type: number
     sql: ${TABLE}.calls_presented ;;
+    drill_fields: [Call_date, hour_format, csq_name]
   }
 
   dimension: calls_abandoned {
