@@ -19,7 +19,7 @@ view: csq_interval {
   }
 
   dimension: hour_format {
-    type: date_hour
+    type: date_hour_of_day
     sql: ${TABLE}.hour ;;
   }
 
@@ -31,13 +31,11 @@ view: csq_interval {
   dimension: calls_handled {
     type: number
     sql: ${TABLE}.calls_handled ;;
-    drill_fields: [drill_set2*]
   }
 
   dimension: calls_presented {
     type: number
     sql: ${TABLE}.calls_presented ;;
-    drill_fields: [drill_set2*]
   }
 
   dimension: calls_abandoned {
