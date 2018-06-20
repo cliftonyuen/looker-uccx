@@ -95,7 +95,7 @@ view: csq_interval {
   measure: Total_Calls_Handled {
     type: sum
     sql: ${calls_handled} ;;
-    drill_fields: [drill_set2*]
+    drill_fields: [drill_set1*]
   }
 
   dimension: compound_primary_key {
