@@ -77,6 +77,7 @@ view: csq_interval {
   measure: Total_Calls_Presented {
     type: sum
     sql: ${calls_presented} ;;
+    drill_fields: [drill_set2*]
   }
 
   measure: Total_Calls_Abandoned {
@@ -93,6 +94,7 @@ view: csq_interval {
   measure: Total_Calls_Handled {
     type: sum
     sql: ${calls_handled} ;;
+    drill_fields: [drill_set2*]
   }
 
   dimension: compound_primary_key {
@@ -101,4 +103,12 @@ view: csq_interval {
     sql: CONCAT(${Call_date},'  ',${hour},'  ',${csq_name}) ;;
   }
 
+  set: drill_set2 {
+    fields: [
+      Date_year,
+      Date_month,
+      Date_date,
+      hour_format,
+      csq_name]
+   }
 }
